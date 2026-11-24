@@ -55,7 +55,7 @@ public class Stack<E> implements StackInterface<E>
             head = head.next;
         }
     }
-    
+
     /**
      * Returns an element from the top of the stack without removing it.
      * 
@@ -68,5 +68,17 @@ public class Stack<E> implements StackInterface<E>
             return head.value;
         }
     }
-    
+
+    /**
+     * Returns true if the stack is empty, and false otherwise.
+     * 
+     * @return Returns true if the stack is empty, false otherwise.
+     */
+    public boolean isEmpty(){
+        boolean isEmpty = false;
+        if(head == null){
+            isEmpty = true; 
+        }
+        return isEmpty;
+    }
 }
