@@ -54,6 +54,7 @@ public class Stack<E> implements StackInterface<E>
             removed = head.value;
             head = head.next;
         }
+        return removed;
     }
 
     /**
@@ -80,5 +81,12 @@ public class Stack<E> implements StackInterface<E>
             isEmpty = true; 
         }
         return isEmpty;
+    }
+    
+    /**
+     * Empties the stack.
+     */
+    public void clear(){
+        head = null;
     }
 }
