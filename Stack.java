@@ -1,3 +1,5 @@
+import java.util.EmptyStackException;
+
 /**
  * Implements a generic stack.  
  * 
@@ -32,13 +34,25 @@ public class Stack<E> implements StackInterface<E>
      * @param element Element to be added to the stack.
      */
     public void push(E element){
-        Node<E> newNode = new Node<E>(element);
+        head = new Node<E>(element, head);
+    }
+
+    /**
+     * Removes and returns an element from the top of the stack.
+     * 
+     * @return Returns the removed element.
+     * @throws EmptyStackException if stack is empty.
+     */
+    public E pop(){
+        E removed = null;
         if(head == null){
-            head = newNode;
+            throw new EmptyStackException();
+        }else if(head.next == null){
+            removed = head.value;
+            head = null;
         }else{
-            newNode.next = head;
-            head = newNode;
+            removed = head.value;
+            head = head.next;
         }
     }
-}
 }
