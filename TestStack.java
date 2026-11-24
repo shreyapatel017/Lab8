@@ -31,11 +31,13 @@ public class TestStack
         }
         maxScore += 10;
         
+        
         if(stack.toString().equals("1 2 3 4 5 6 7 8 9 10")) score++;
         stack.clear();
         if(stack.isEmpty()) score++;
         if(stack.toString().equals("")) score++;
         maxScore += 3;
+        
         
         if(maxScore == score){
             System.out.println("Congratulations!");
