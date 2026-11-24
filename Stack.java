@@ -1,8 +1,8 @@
 /**
  * Implements a generic stack.  
  * 
- * @author (names)
- * @version (date)
+ * @author Shreya Patel
+ * @version 11/23/2026
  */
 public class Stack<E> implements StackInterface<E>
 {
@@ -26,4 +26,19 @@ public class Stack<E> implements StackInterface<E>
     }
 
     //add the required methods here
+    /**
+     * Adds an element to the top of the stack.
+     * 
+     * @param element Element to be added to the stack.
+     */
+    public void push(E element){
+        Node<E> newNode = new Node<E>(element);
+        if(head == null){
+            head = newNode;
+        }else{
+            newNode.next = head;
+            head = newNode;
+        }
+    }
+}
 }
