@@ -119,4 +119,27 @@ public class Stack<E> implements StackInterface<E>
         }
         return position;
     }
+    
+    /**
+     * Returns a String representing the contents of the stack, separated by a single space. 
+     * There should be no leading or trailing spaces in the returned string. If the stack is empty, 
+     * returns the empty string.
+     * 
+     * @returns A string representation of the contents of the stack.
+     */
+    public String toString(){
+        StringBuffer s = new StringBuffer();
+        Node<E> finger = head;
+        if(head == null){
+            return "";
+        }else{
+            s.append(finger.value);
+            finger = finger.next;
+            while(finger != null){
+                s.append(" " + finger.value);
+                finger = finger.next;
+            }
+            return s.toString();
+        }
+    }
 }
