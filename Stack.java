@@ -55,4 +55,18 @@ public class Stack<E> implements StackInterface<E>
             head = head.next;
         }
     }
+    
+    /**
+     * Returns an element from the top of the stack without removing it.
+     * 
+     * @return Returns an element from the top of the stack.
+     */
+    public E peek(){
+        if(head == null){
+            throw new EmptyStackException();
+        }else{
+            return head.value;
+        }
+    }
+    
 }
