@@ -8,6 +8,11 @@ import java.util.Scanner;
  */
 public class ConvertToBinary
 {
+    /**
+     * Main method to convert integer to binary equivalent using Stack object.
+     * 
+     * @param args command-line arguments.
+     */
     public static void main(String[] args){
         Stack<Integer> stack = new Stack<Integer>();
         
