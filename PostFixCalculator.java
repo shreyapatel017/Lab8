@@ -4,10 +4,15 @@ import java.util.Scanner;
  * Evaluates expressions in postfix notation.
  *
  * @author Shreya Patel
- * @version 11/25/2026
+ * @version 11/26/2026
  */
 public class PostFixCalculator
 {
+    /**
+     * Creates stack object to evaluate postfix notation expressions from input, and prints answer.
+     * 
+     * @param args command-line arguments.
+     */
     public static void main(String[] args){
         Stack<Double> stack = new Stack<Double>();
 
