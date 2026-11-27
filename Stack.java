@@ -63,11 +63,13 @@ public class Stack<E> implements StackInterface<E>
      * @return Returns an element from the top of the stack.
      */
     public E peek(){
+        E toReturn = null;
         if(head == null){
-            throw new EmptyStackException();
+            toReturn = null;;
         }else{
-            return head.value;
+            toReturn = head.value;
         }
+        return toReturn;
     }
 
     /**
@@ -99,27 +101,27 @@ public class Stack<E> implements StackInterface<E>
      * @return Returns the position of obj, and -1 if it's not in the stack.
      */
     public int search(Object obj){
-        int position = -1;
+        int position = 0;
         boolean found = false;
         Node<E> finger = head;
-        if(head.value == obj){
+        if(head.value.equals(obj)){
             position = 1;
             found = true;
         }else{
-            while(!found && finger.next != null){
-                if(finger.value == obj){
+            while(!found && finger != null){
+                if(finger.value.equals(obj)){
                     found = true;
                 }
                 position++;
                 finger = finger.next;
             }
         }
-        if(found = false){
+        if(found == false){
             position = -1;
         }
         return position;
     }
-    
+
     /**
      * Returns a String representing the contents of the stack, separated by a single space. 
      * There should be no leading or trailing spaces in the returned string. If the stack is empty, 
